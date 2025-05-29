@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="split-layout">
+                <!-- Left Side: Controls -->
+                <div class="left-panel">
+                    <h1>TALLY LOGGER</h1>
+                    <h2 id="count-el">0</h2>
+                    <button id="add-btn" onclick="addEntry()">ADD ENTRY</button>
+                    <button id="log-btn" onclick="logEntry()">LOG ENTRY</button>
+                    
+                    <div class="stats-row">
+                        <button id="reset-btn" onclick="resetAll()">Reset</button>
+                        <div class="total-container">
+                            <p>Total Count: <span id="total-count">0</span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Right Side: Table -->
+                <div class="right-panel">
+                    <div class="log-table">
+                        <p>PREVIOUS ENTRIES: </p>
+                        <table id="log-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Count</th>
+                                    <th>Date & Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="log-entries">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <script src="index.js"></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,245 @@
+body {
+    position: relative;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("bgimage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(2px); 
+    z-index: -1;
+}
+
+.container {
+    width: auto; 
+    max-width: 1200px; 
+    margin: auto;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #FF66B3;
+    box-shadow: 0 0 15px #3366CC;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.total-container p {
+    background-color: rgba(255, 102, 179, 0.5);
+    color: white;
+    padding: 8px 12px;
+    margin: 0;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: left;
+    border: 3px solid #3366CC; 
+    box-shadow: 0 0 5px rgba(255, 102, 179, 0.5); 
+    width: 100%; 
+    display: flex; 
+    align-items: center;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #FF66B3;
+}
+
+h2 {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+
+button {
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#add-btn {
+    background: #FF0033;
+    box-shadow: 0 0 8px #FF0033;
+    width: 69%;
+}
+
+#log-btn {
+    background: #3366CC;
+    box-shadow: 0 0 8px #3366CC;
+    width: 69%;
+}
+
+#reset-btn {
+    flex: 1;
+    background: #FF66B3;
+    box-shadow: 0 0 8px #FF66B3;
+    border: 2px solid white;
+    margin: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px; 
+}
+
+#reset-btn:hover {
+    background: #FF0066;
+    box-shadow: 0 0 12px #FF0066;
+}
+
+/* Split layout styles */
+.split-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+.left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 20px;
+    border-right: 2px solid #FF66B3;
+}
+
+.right-panel {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Table container */
+.log-table {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.log-table p {
+    color: hotpink;
+    padding: 8px 12px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: left;
+    flex: 0 0 auto;
+}
+
+/* Keep table layout and scrolling behavior */
+#log-table {
+    table-layout: fixed;
+    display: table;
+    overflow-y: auto;
+    height: calc(100% - 50px); 
+    border: 3px solid #3366CC; 
+}
+
+/* Use 'display: table' to match your original visual design */
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Restore table header visuals */
+thead {
+    background-color: rgba(255, 102, 179, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Fix the alignment issue by keeping scrollbar space stable */
+tbody {
+    display: block;
+    overflow-y: auto;
+    height: 100%;
+    max-height: calc(100% - 40px);
+    scrollbar-gutter: stable; /* Add stable gutter for scrollbar */
+}
+
+/* Compensate for scrollbar width (approx. 8px) */
+thead th {
+    padding-right: 8px;
+}
+
+/* Table cell style */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+table thead th {
+    border: none;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+    border-left: 3px solid #3366cc;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th:first-child, td:first-child {
+    border-left: none;
+}
+
+tbody tr:hover {
+    background-color: rgba(51, 102, 204, 0.3);
+}
+
+/* Scrollbar visuals */
+tbody::-webkit-scrollbar {
+    width: 8px;
+}
+
+tbody::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+tbody::-webkit-scrollbar-thumb {
+    background: #FF66B3;
+    border-radius: 10px;
+}
+
+tbody::-webkit-scrollbar-thumb:hover {
+    background: #FF0066;
+}
+
+/* Row section */
+.stats-row {
+    display: flex;
+    width: 69%;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: stretch;
+}
+
+.total-container {
+    flex: 3; 
+    display: flex;
+}
